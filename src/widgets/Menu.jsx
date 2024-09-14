@@ -4,6 +4,7 @@ import HomePage from '../pages/Home/HomePage';
 import NotFound from '../pages/NotFound';
 import ProductPage from '../pages/Product/ProductPage';
 import Layout from '../components/Layout';
+import Cart from '../pages/Cart/Cart';
 
 function Menu() {
     return (
@@ -12,6 +13,7 @@ function Menu() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<HomePage />} />
                     <Route path='products' element={<ProductPage />} />
+                    <Route path='cart' element={<Cart />} />
                     <Route path='*' element={<NotFound />} />
                 </Route>
             </Routes>

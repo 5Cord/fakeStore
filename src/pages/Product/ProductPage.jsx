@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProductPage.module.css'; // Импортируем CSS-модуль
 
-const product = [
-  { id: 1, image: "https://avatars.mds.yandex.net/i?id=5c22df04a386e2be332cfa611ef1024a_l-5847755-images-thumbs&n=13", title: "Слот 1", description: 'Описание бла бла', price: 1200 },
-  { id: 1, image: "https://avatars.mds.yandex.net/i?id=5c22df04a386e2be332cfa611ef1024a_l-5847755-images-thumbs&n=13", title: "Слот 1", description: 'Описание бла бла', price: 1200 },
-  { id: 1, image: "https://avatars.mds.yandex.net/i?id=5c22df04a386e2be332cfa611ef1024a_l-5847755-images-thumbs&n=13", title: "Слот 1", description: 'Описание бла бла', price: 1200 },
-  { id: 1, image: "https://avatars.mds.yandex.net/i?id=5c22df04a386e2be332cfa611ef1024a_l-5847755-images-thumbs&n=13", title: "Слот 1", description: 'Описание бла бла', price: 1200 }
-];
-
 export default function ProductPage() {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/catalog')
+      .then(res => res.json())
+      .then(data => setProduct(data));
+  }, []);
+
+  const addToCart = (product) => {
+    fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Product added to cart:', data);
+      })
+      .catch(error => {
+        console.error('Error adding product to cart:', error);
+      });
+  };
+
   return (
     <div className={styles.productContainer}>
       {product.map(el => (
         <div key={el.id} className={styles.productCard}>
-          <img src={el.image} alt={el.title} className={styles.productImage} />
+          <img src={el.imageUrl} alt={el.title} className={styles.productImage} />
           <div className={styles.productTitle}>{el.title}</div>
           <div className={styles.productDescription}>{el.description}</div>
           <div className={styles.productPrice}>{el.price} ₽</div>
+          <button onClick={() => addToCart(el)}>В корзину</button>
         </div>
       ))}
     </div>
