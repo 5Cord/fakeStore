@@ -1,7 +1,7 @@
 import React from 'react';
 import './MenuActive.css'
 import './App.module.css'
-import Menu from './Widgets/Menu';
+import Menu from './widgets/Menu';
 function App() {
 
   return (
