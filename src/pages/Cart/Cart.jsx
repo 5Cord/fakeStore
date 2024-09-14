@@ -8,8 +8,8 @@ export default function Cart() {
         fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart')
             .then(res => res.json())
             .then(data => setCartItems(data))
-            .catch(error => console.error('Error fetching cart data:', error));
     }, []);
+    const finalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
     return (
         <div className={styles.cartContainer}>
@@ -25,6 +25,7 @@ export default function Cart() {
                     </div>
                 ))
             )}
+            <p>Итог: {finalPrice}</p>
         </div>
     );
 }

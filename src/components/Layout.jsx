@@ -12,7 +12,6 @@ export default function Layout() {
                 <NavLink to="/cart" className={setActive}><FaShoppingCart /></NavLink>
             </nav>
             <Outlet />
-            <footer>2024</footer>
         </>
     )
 }

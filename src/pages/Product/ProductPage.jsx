@@ -2,30 +2,30 @@ import React, { useEffect, useState } from 'react';
 import styles from './ProductPage.module.css'; // Импортируем CSS-модуль
 
 export default function ProductPage() {
+
   const [product, setProduct] = useState([]);
+
 
   useEffect(() => {
     fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/catalog')
-      .then(res => res.json())
-      .then(data => setProduct(data));
-  }, []);
+      .then(response => response.json())
+      .then(data => setProduct(data))
+  }, [])
 
-  const addToCart = (product) => {
+  const addToCart = (p) => {
     fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart', {
-      method: 'POST',
+      method: "POST",
       headers: {
         'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    })
-      .then(response => response.json())
+      }, body: JSON.stringify(p),
+    }).then(response => response.json())
       .then(data => {
         console.log('Product added to cart:', data);
       })
       .catch(error => {
         console.error('Error adding product to cart:', error);
       });
-  };
+  }
 
   return (
     <div className={styles.productContainer}>
