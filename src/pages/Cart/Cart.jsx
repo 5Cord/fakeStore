@@ -11,6 +11,12 @@ export default function Cart() {
     }, []);
     const finalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
+    const deleteToCart = (p) => {
+        fetch(`https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart/${p.id}`, {
+            method: 'DELETE',
+        }).then(setCartItems(prevItem => prevItem.filter(item => item.id !== p.id)))
+    }
+
     return (
         <div className={styles.cartContainer}>
             <h1>Корзина</h1>
@@ -22,6 +28,7 @@ export default function Cart() {
                         <img src={item.imageUrl} alt={item.title} className={styles.cartImage} />
                         <div className={styles.cartTitle}>{item.title}</div>
                         <div className={styles.cartPrice}>{item.price} ₽</div>
+                        <button onClick={() => deleteToCart(item)}>удалить</button>
                     </div>
                 ))
             )}

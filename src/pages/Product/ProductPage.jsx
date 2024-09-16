@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ProductPage.module.css'; // Импортируем CSS-модуль
+import { Link } from 'react-router-dom';
 
 export default function ProductPage() {
 
@@ -21,22 +22,21 @@ export default function ProductPage() {
     }).then(response => response.json())
       .then(data => {
         console.log('Product added to cart:', data);
-      })
-      .catch(error => {
-        console.error('Error adding product to cart:', error);
       });
   }
 
   return (
     <div className={styles.productContainer}>
       {product.map(el => (
-        <div key={el.id} className={styles.productCard}>
-          <img src={el.imageUrl} alt={el.title} className={styles.productImage} />
-          <div className={styles.productTitle}>{el.title}</div>
-          <div className={styles.productDescription}>{el.description}</div>
-          <div className={styles.productPrice}>{el.price} ₽</div>
-          <button onClick={() => addToCart(el)}>В корзину</button>
-        </div>
+        <Link key={el.id} to={`/products/${el.id}`}>
+          <div key={el.id} className={styles.productCard}>
+            <img src={el.imageUrl} alt={el.title} className={styles.productImage} />
+            <div className={styles.productTitle}>{el.title}</div>
+            <div className={styles.productDescription}>{el.description}</div>
+            <div className={styles.productPrice}>{el.price} ₽</div>
+            <button onClick={() => addToCart(el)}>В корзину</button>
+          </div>
+        </Link>
       ))}
     </div>
   );
