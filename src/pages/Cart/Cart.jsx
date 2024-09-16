@@ -9,6 +9,7 @@ export default function Cart() {
             .then(res => res.json())
             .then(data => setCartItems(data))
     }, []);
+
     const finalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
     const deleteToCart = (p) => {
@@ -28,11 +29,16 @@ export default function Cart() {
                         <img src={item.imageUrl} alt={item.title} className={styles.cartImage} />
                         <div className={styles.cartTitle}>{item.title}</div>
                         <div className={styles.cartPrice}>{item.price} ₽</div>
-                        <button onClick={() => deleteToCart(item)}>удалить</button>
+                        <button className={styles.deleteButton} onClick={() => deleteToCart(item)}>
+                            удалить
+                        </button>
                     </div>
                 ))
             )}
-            <p>Итог: {finalPrice}</p>
+            <div className={styles.finalBlock}>
+                <p className={styles.result}>Итог: {finalPrice}</p>
+                <button className={styles.arrange}>Оформить</button>
+            </div>
         </div>
     );
 }

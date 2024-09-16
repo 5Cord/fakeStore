@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import styles from './ProductPage.module.css'; // Импортируем CSS-модуль
+import styles from './Product.module.css';
 import { useParams } from 'react-router-dom'
 
 export default function ProductId() {
     const { id } = useParams();
-    const [product, setProduct] = useState(null); // Инициализируем как объект
+    const [product, setProduct] = useState(null);
 
     useEffect(() => {
         fetch(`https://66e5bacd5cc7f9b6273e31a2.mockapi.io/catalog/${id}`)
