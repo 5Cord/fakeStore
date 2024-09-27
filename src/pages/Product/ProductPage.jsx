@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './ProductPage.module.css'; // Импортируем CSS-модуль
+import cl from './ProductPage.module.css'; // Импортируем CSS-модуль
 Button
 import { Link } from 'react-router-dom';
 
@@ -57,35 +57,35 @@ export default function ProductPage() {
 
   return (
     <>
-      <div className={styles.mainContainer}>
-        <div className={styles.hContainer}>
+      <div className={cl.mainContainer}>
+        <div className={cl.hContainer}>
           <h4>Комплектации</h4>
           <h1>BOILING MACHINE SILVERs</h1>
         </div>
-        <div className={styles.productContainer}>
+        <div className={cl.productContainer}>
 
           {product.map(el => (
-            <div key={el.id} className={styles.productCard}>
+            <div key={el.id} className={cl.productCard}>
               <Link to={`/products/${el.id}`}>
-                <div className={styles.imgCard}>
-                  <img src={el.imageUrl} alt={el.title} className={styles.productImage} />
+                <div className={cl.imgCard}>
+                  <img src={el.imageUrl} alt={el.title} className={cl.productImage} />
                 </div>
-                <div className={styles.downBlockCard}>
+                <div className={cl.downBlockCard}>
 
-                  <div className={styles.productTitle}>{el.title}</div>
-                  <div className={styles.blockContainer}>
-                    <div className={styles.productPrice}>{el.price} ₽</div>
-                    <div className={styles.typePc}>{el.typePc}</div>
+                  <div className={cl.productTitle}>{el.title}</div>
+                  <div className={cl.blockContainer}>
+                    <div className={cl.productPrice}>{el.price} ₽</div>
+                    <div className={cl.typePc}>{el.typePc}</div>
                   </div>
 
                   {/* Выводим дополнительные данные */}
-                  {el.CP && <div className={styles.productDetails}>Процессор: {el.CP}</div>}
-                  {el.VP && <div className={styles.productDetails}>Видеокарта: {el.VP}</div>}
-                  {el.RAM && <div className={styles.productDetails}>Оперативная память: {el.RAM}</div>}
-                  {el.MatherBoard && <div className={styles.productDetails}>Материнская плата: {el.MatherBoard}</div>}
-                  {el.SDD && <div className={styles.productDetails}>Накопитель: {el.SDD}</div>}
-                  {el.powerBlock && <div className={styles.productDetails}>Блок питания: {el.powerBlock}</div>}
-                  {el.Cooling && <div className={styles.productDetails}>Охлаждение: {el.Cooling}</div>}
+                  {el.CP && <div className={cl.productDetails}>Процессор: {el.CP}</div>}
+                  {el.VP && <div className={cl.productDetails}>Видеокарта: {el.VP}</div>}
+                  {el.RAM && <div className={cl.productDetails}>Оперативная память: {el.RAM}</div>}
+                  {el.MatherBoard && <div className={cl.productDetails}>Материнская плата: {el.MatherBoard}</div>}
+                  {el.SDD && <div className={cl.productDetails}>Накопитель: {el.SDD}</div>}
+                  {el.powerBlock && <div className={cl.productDetails}>Блок питания: {el.powerBlock}</div>}
+                  {el.Cooling && <div className={cl.productDetails}>Охлаждение: {el.Cooling}</div>}
                 </div>
               </Link>
               <Button sx={{

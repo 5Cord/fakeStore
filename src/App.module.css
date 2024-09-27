@@ -1,0 +1,46 @@
+.container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.baner {
+    color: white;
+    position: relative;
+    background: #161616 url(https://boiling-machine.ru/wp-content/uploads/show-room-background.webp);
+    border-radius: 30px;
+    padding: 65px 135px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.addressShowRooom {
+    background: #161616;
+    border: 1px solid #313131;
+    border-radius: 10px;
+    padding: 25px;
+    width: 40%;
+}
+
+.containerCarousel {
+    margin-top: 10px;
+}
+
+.containerBlockGrid {
+    position: relative;
+    background: #f6f6f6;
+    border-radius: 20px;
+    padding: 25px 30px;
+    min-height: 200px;
+}
+
+.containerBlockGrid p {
+    max-width: 50%;
+}
+
+.containerBlockGrid img {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+}

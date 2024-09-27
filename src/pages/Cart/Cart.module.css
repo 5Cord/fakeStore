@@ -2,7 +2,7 @@
   background-color: #f7f7f7;
   /* Светло-серый фон */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 50px 50px 0 0;
   width: 80%;
   margin: 0 auto;
   margin-top: 3%;
@@ -13,12 +13,6 @@ h1 {
   color: #333;
   font-size: 28px;
   margin-bottom: 20px;
-}
-
-p {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
 }
 
 .cartItem {
@@ -129,4 +123,3 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-

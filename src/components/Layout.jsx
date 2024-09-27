@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import cl from '../App.module.css'
 
 const setActive = ({ isActive }) => (isActive ? 'active-link' : '');
 
@@ -21,7 +22,7 @@ export default function Layout() {
             >
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Typography variant="h6" sx={{ color: '#333', fontWeight: 'bold' }}>
-                        Логотип
+                        PC Store
                     </Typography>
                     <div>
                         <Button
