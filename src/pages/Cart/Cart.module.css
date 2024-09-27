@@ -5,6 +5,7 @@
   border-radius: 10px;
   width: 80%;
   margin: 0 auto;
+  margin-top: 3%;
 }
 
 h1 {
@@ -76,7 +77,6 @@ p {
   /* Более светлый оттенок красного при наведении */
 }
 
-
 button:hover {
   background-color: #ff6666;
 }
@@ -129,3 +129,4 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+

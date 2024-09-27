@@ -1,24 +1,29 @@
+.mainContainer {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5%;
+    background-color: rgb(245, 245, 245);
+    border-radius: 50px 50px 0 0;
+}
+
 .productContainer {
-    margin-top: 3%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    padding: 50px 0;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
 
 .productCard {
-    background-color: #f5f5f5;
-    /* Светло-серый фон */
-    border: 1px solid #ccc;
-    /* Тонкая серая граница */
     border-radius: 8px;
-    width: 300px;
-    padding: 20px;
+    width: 420px;
+    margin: 20px;
     transition: transform 0.3s ease;
 }
 
 .productCard:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     /* Легкое увеличение при наведении */
 }
 
@@ -31,7 +36,6 @@
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .downBlockCard {
@@ -52,10 +56,16 @@
 }
 
 .productPrice {
-    font-size: 20px;
+    font-style: normal;
     font-weight: 700;
-    color: #000;
-    margin-bottom: 15px;
+    margin: 0;
+    line-height: 130%;
+    text-align: center;
+    color: #34363a;
+    padding: 8px 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    width: 30%;
 }
 
 .productDetails {
@@ -65,7 +75,7 @@
 }
 
 .addToCart {
-    background-color: #333;
+    background-color: #F39F5A;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -76,9 +86,31 @@
 }
 
 .addToCart:hover {
-    background-color: #555;
+    background-color: #f0852e;
 }
 
 a {
     text-decoration: none;
+}
+
+.hContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.typePc {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    margin: 0;
+    color: #f17e2b;
+    padding: 8px 12px;
+    border: 1px solid #ffd0ae;
+    border-radius: 10px;
+}
+
+.blockContainer {
+    display: flex;
+    gap: 10px;
 }

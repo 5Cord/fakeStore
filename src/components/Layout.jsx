@@ -1,17 +1,58 @@
-import React from 'react'
+import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-const setActive = ({ isActive }) => isActive ? 'active-link' : '';
-import { FaShoppingCart } from 'react-icons/fa';
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+const setActive = ({ isActive }) => (isActive ? 'active-link' : '');
 
 export default function Layout() {
     return (
         <>
-            <nav>
-                <NavLink to="/" className={setActive}>Главная</NavLink>
-                <NavLink to="/products" className={setActive}>Продукты</NavLink>
-                <NavLink to="/cart" className={setActive}><FaShoppingCart /></NavLink>
-            </nav>
+            <AppBar
+                position="fixed"
+                sx={{
+                    backgroundColor: 'rgba(245, 245, 245, 0.6)', // Прозрачный фон
+                    boxShadow: 'none',
+                    borderBottom: '1px solid #ddd',
+                    borderRadius: '0 0 16px 16px',
+                    padding: '8px 16px',
+                }}
+            >
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography variant="h6" sx={{ color: '#333', fontWeight: 'bold' }}>
+                        Логотип
+                    </Typography>
+                    <div>
+                        <Button
+                            component={NavLink}
+                            to="/"
+                            sx={{ color: '#333', marginRight: 2, textTransform: 'none' }}
+                            className={setActive}
+                        >
+                            Главная
+                        </Button>
+                        <Button
+                            component={NavLink}
+                            to="/products"
+                            sx={{ color: '#333', marginRight: 2, textTransform: 'none' }}
+                            className={setActive}
+                        >
+                            Продукты
+                        </Button>
+                    </div>
+                    <div>
+                        <IconButton component={NavLink} to="/cart" sx={{ color: '#333', marginRight: 2 }}>
+                            <ShoppingCartIcon />
+                        </IconButton>
+                        <IconButton sx={{ color: '#333' }}>
+                            <AccountCircleIcon />
+                        </IconButton>
+                    </div>
+                </Toolbar>
+            </AppBar>
+            <Toolbar /> {/* Служебный Toolbar для компенсации фиксированного AppBar */}
             <Outlet />
         </>
-    )
+    );
 }
