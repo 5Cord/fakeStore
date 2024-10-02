@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Grid } from '@mui/material';
 import { useAuth } from '../../AuthContext'; // Импортируйте useAuth
+import cl from './Auth.module.css'; 
 
 export default function Login() {
     const { login } = useAuth(); // Получите функцию login из контекста
@@ -36,7 +37,7 @@ export default function Login() {
     };
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container className={cl.container} component="main" maxWidth="xs">
             <Typography variant="h5" align="center">Авторизация</Typography>
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
@@ -75,7 +76,7 @@ export default function Login() {
             </form>
             <Grid container justifyContent="flex-end">
                 <Grid item>
-                    <Button href="/register">Нет аккаунта? Зарегистрироваться</Button>
+                    <Button href="/register">Нет аккаунта</Button>
                 </Grid>
             </Grid>
         </Container>
