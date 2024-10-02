@@ -1,10 +1,13 @@
 // Register.js
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Grid } from '@mui/material';
+import { useAuth } from '../../AuthContext'; // Импортируйте useAuth
 
 export default function Register() {
+    const { login } = useAuth(); // Получите функцию login из контекста
     const [formData, setFormData] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
     });
@@ -16,22 +19,35 @@ export default function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Логика регистрации
-        fetch('http://localhost:3001/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
+        // Проверка существующего email
+        fetch(`http://localhost:3001/users?email=${formData.email}`)
             .then(response => response.json())
             .then(data => {
-                console.log('Регистрация успешна:', data);
-                // Перенаправление на страницу входа
-                window.location.href = '/login';
+                if (data.length > 0) {
+                    console.error('Пользователь с таким email уже зарегистрирован');
+                    alert('Пользователь с таким email уже зарегистрирован');
+                } else {
+                    // Регистрация нового пользователя
+                    fetch('http://localhost:3001/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Регистрация успешна:', data);
+                            login(data); // Вызовите login для сохранения пользователя в контексте
+                            window.location.href = '/'; // Перенаправление на главную страницу
+                        })
+                        .catch(error => {
+                            console.error('Ошибка при регистрации:', error);
+                        });
+                }
             })
             .catch(error => {
-                console.error('Ошибка при регистрации:', error);
+                console.error('Ошибка при проверке email:', error);
             });
     };
 
@@ -46,11 +62,20 @@ export default function Register() {
                             required
                             fullWidth
                             label="Имя"
-                            name="name"
-                            value={formData.name}
+                            name="firstName"
+                            value={formData.firstName}
                             onChange={handleChange}
-                            autoComplete="given-name"
-                            autoFocus
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            variant="outlined"
+                            required
+                            fullWidth
+                            label="Фамилия"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -75,7 +100,7 @@ export default function Register() {
                             type="password"
                             value={formData.password}
                             onChange={handleChange}
-                            autoComplete="new-password"
+                            autoComplete="current-password"
                         />
                     </Grid>
                     <Grid item xs={12}>

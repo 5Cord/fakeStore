@@ -46,24 +46,7 @@
       "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp"
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "title": "Компьютер 1",
-      "CP": "AMD Ryzen 7500F",
-      "VP": "NVIDIA RTX 4070",
-      "RAM": "DDR5 6000MHZ 32GB",
-      "MatherBoard": "B650 WIFI DDR5",
-      "SDD": "M.2 SSD 1TB",
-      "powerBlock": "700w",
-      "Cooling": "Deepcool LS720",
-      "price": 13900,
-      "description": "Бюджетный игровой компьютер для комфортной игры в современных играх.",
-      "typePc": "Gaming",
-      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp",
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "order": [
     {
       "id": "fd72",
@@ -81,6 +64,19 @@
       "id": "7287",
       "name": "Вася",
       "email": "vasya1@test.ru",
+      "password": "123"
+    },
+    {
+      "id": "7837",
+      "name": "Дмитрий",
+      "email": "dima2v@bk.ru",
+      "password": "123"
+    },
+    {
+      "id": "c89e",
+      "firstName": "дИМАС",
+      "lastName": "Попова",
+      "email": "lera@test.ru",
       "password": "123"
     }
   ]
