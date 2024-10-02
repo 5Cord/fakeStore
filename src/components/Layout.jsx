@@ -20,11 +20,11 @@ export default function Layout() {
                     padding: '8px 16px',
                 }}
             >
-                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Toolbar sx={{ display: 'flex', gap: "2vw", justifyContent: 'space-between', alignItems: 'center' }}>
                     <Typography variant="h6" sx={{ color: '#333', fontWeight: 'bold' }}>
                         PC Store
                     </Typography>
-                    <div>
+                    <div style={{ flexGrow: 1 }}>
                         <Button
                             component={NavLink}
                             to="/"
@@ -42,7 +42,7 @@ export default function Layout() {
                             Продукты
                         </Button>
                     </div>
-                    <div>
+                    <div className={cl.rightMenu}>
                         <IconButton component={NavLink} to="/cart" sx={{ color: '#333', marginRight: 2 }}>
                             <ShoppingCartIcon />
                         </IconButton>

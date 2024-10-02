@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom';
 export default function ProductPage() {
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
-
+  const [searchFilter, setsearchFilter] = useState('');
   useEffect(() => {
-    fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/catalog')
+    fetch('http://localhost:3001/catalog')
       .then(response => response.json())
       .then(data => setProduct(data));
 
     // Получение корзины при загрузке страницы
-    fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart')
+    fetch('http://localhost:3001/cart')
       .then(response => response.json())
       .then(data => setCart(data));
   }, []);
 
   const updateCart = (updatedItem) => {
-    fetch(`https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart/${updatedItem.id}`, {
+    fetch(`http://localhost:3001/cart/${updatedItem.id}`, {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default function ProductPage() {
       updateCart(updatedItem);
     } else {
       // Если товар не в корзине, добавляем его
-      fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart', {
+      fetch('http://localhost:3001/cart', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -55,16 +55,22 @@ export default function ProductPage() {
     }
   };
 
+  const filterProduct = product.filter(n =>
+    n.title.toLowerCase().includes(searchFilter.toLowerCase())
+  );
+
   return (
     <>
       <div className={cl.mainContainer}>
+        {/* <input type="text" onChange={e => setsearchFilter(e.target.value)} /> */}
         <div className={cl.hContainer}>
+          {searchFilter}
           <h4>Комплектации</h4>
           <h1>BOILING MACHINE SILVERs</h1>
         </div>
         <div className={cl.productContainer}>
 
-          {product.map(el => (
+          {filterProduct.map(el => (
             <div key={el.id} className={cl.productCard}>
               <Link to={`/products/${el.id}`}>
                 <div className={cl.imgCard}>

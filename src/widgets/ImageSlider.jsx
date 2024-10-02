@@ -14,7 +14,8 @@ const ImageSlider = () => {
                 interval={3000}
                 transitionTime={500}
                 emulateTouch={true}
-                sx={{ width: '100%', height: 'auto' }}
+                showStatus={false} /* убираем индикатор статуса, если не нужен */
+                stopOnHover={false} /* продолжение автопрокрутки даже при наведении */
             >
                 <div>
                     <img src="https://boiling-machine.ru/wp-content/uploads/cs-2-silver-desktop-2560x800-1.webp" alt="Image 1" />

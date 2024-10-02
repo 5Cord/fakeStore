@@ -13,7 +13,7 @@ export default function Cart() {
     });
 
     useEffect(() => {
-        fetch('https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart')
+        fetch('http://localhost:3001/cart')
             .then(res => res.json())
             .then(data => setCartItems(data));
     }, []);
@@ -31,7 +31,7 @@ export default function Cart() {
     const finalPrice = itemsList.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     const deleteFromCart = (id) => {
-        fetch(`https://66e5bacd5cc7f9b6273e31a2.mockapi.io/cart/${id}`, {
+        fetch(`http://localhost:3001/cart/${id}`, {
             method: 'DELETE',
         }).then(() => {
             setCartItems(prevItems => prevItems.filter(item => item.id !== id));
@@ -55,8 +55,18 @@ export default function Cart() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Здесь можно добавить логику для отправки данных формы
-        console.log(formData);
+
+        fetch('http://localhost:3001/order  ', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...formData
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data));
     };
 
     return (

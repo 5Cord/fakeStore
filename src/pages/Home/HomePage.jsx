@@ -10,7 +10,17 @@ export default function HomePage() {
       <ImageSlider />
 
       <div className={cl.container}>
-        <Grid sx={{ marginBottom: "3%" }} container spacing={2}>
+        <div className={cl.blockStart}>
+          <div className={cl.blockStartRight}>
+            <img src="https://boiling-machine.ru/wp-content/uploads/front-category-computer-min1600.webp" alt="" />
+          </div>
+          <div className={cl.blockStartLeft}>
+            <div className={cl.blockStartTitle}>Купить</div>
+            <div className={cl.description}>Игровой компьютер</div>
+            <div className={cl.price}>от 89 000 руб.</div>
+          </div>
+        </div>
+        <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <div className={cl.containerBlockGrid}>
               <h2>Удобная доставка</h2>
