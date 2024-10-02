@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import Cart from '../pages/Cart/Cart';
 import Product from '../pages/Product/Product';
 import ProducId from '../pages/Product/Product';
+import Register from '../pages/Authentication/Register';
+import Login from '../pages/Authentication/Login';
 
 function Menu() {
     return (
@@ -17,6 +19,8 @@ function Menu() {
                     <Route path='products' element={<ProductPage />} />
                     <Route path='products/:id' element={<ProducId />} />
                     <Route path='cart' element={<Cart />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path='*' element={<NotFound />} />
                 </Route>
             </Routes>

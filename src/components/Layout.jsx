@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
+import {
+    AppBar,
+    Toolbar,
+    IconButton,
+    Typography,
+    Button,
+    Menu,
+    MenuItem
+} from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import cl from '../App.module.css'
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import cl from '../App.module.css';
+import { useAuth } from '../AuthContext'; // Импортируйте useAuth
 
 const setActive = ({ isActive }) => (isActive ? 'active-link' : '');
 
 export default function Layout() {
+    const [anchorEl, setAnchorEl] = useState(null); // Состояние для управления меню
+
+    const handleMenu = (event) => {
+        setAnchorEl(event.currentTarget); // Устанавливаем элемент для меню
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null); // Закрываем меню
+    };
+    const { user, logout } = useAuth();
     return (
         <>
             <AppBar
@@ -46,9 +65,43 @@ export default function Layout() {
                         <IconButton component={NavLink} to="/cart" sx={{ color: '#333', marginRight: 2 }}>
                             <ShoppingCartIcon />
                         </IconButton>
-                        <IconButton sx={{ color: '#333' }}>
-                            <AccountCircleIcon />
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleMenu}
+                            color="inherit"
+                        >
+                            <AccountCircle sx={{ color: '#333', marginRight: 2 }} />
                         </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorEl}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            {user ? (
+                                <>
+                                    <Button onClick={logout} color="inherit">Выйти</Button>
+                                    <Typography variant="body1" color="inherit">{user.name}</Typography>
+                                </>
+                            ) : (
+                                <>
+                                    <Button component={NavLink} to="/login" color="inherit">Войти</Button>
+                                    <Button component={NavLink} to="/register" color="inherit">Регистрация</Button>
+                                </>
+                            )}
+                        </Menu>
                     </div>
                 </Toolbar>
             </AppBar>

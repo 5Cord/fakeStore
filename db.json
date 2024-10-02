@@ -48,21 +48,40 @@
   ],
   "cart": [
     {
-      "id": "3",
-      "title": "Компьютер 3",
-      "CP": "Intel Core i7-12700K",
-      "VP": "NVIDIA RTX 2060",
-      "RAM": "DDR4 3600MHz 32GB",
-      "MatherBoard": "Z690 AORUS ELITE AX",
-      "SDD": "1TB NVMe",
-      "powerBlock": "750w",
-      "Cooling": "Noctua NH-D15",
-      "price": 21500,
+      "id": "1",
+      "title": "Компьютер 1",
+      "CP": "AMD Ryzen 7500F",
+      "VP": "NVIDIA RTX 4070",
+      "RAM": "DDR5 6000MHZ 32GB",
+      "MatherBoard": "B650 WIFI DDR5",
+      "SDD": "M.2 SSD 1TB",
+      "powerBlock": "700w",
+      "Cooling": "Deepcool LS720",
+      "price": 13900,
       "description": "Бюджетный игровой компьютер для комфортной игры в современных играх.",
       "typePc": "Gaming",
       "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp",
       "quantity": 1
     }
   ],
-  "order": []
+  "order": [
+    {
+      "id": "fd72",
+      "body": "{\"firstName\":\"валентина\",\"lastName\":\"барышникова\",\"phone\":\"+79177382663\",\"email\":\"nata.vajtovich@bk.ru\",\"address\":\"420726\"}"
+    }
+  ],
+  "users": [
+    {
+      "id": "c046",
+      "name": "Вася",
+      "email": "vasya1@test.ru",
+      "password": "123"
+    },
+    {
+      "id": "7287",
+      "name": "Вася",
+      "email": "vasya1@test.ru",
+      "password": "123"
+    }
+  ]
 }
