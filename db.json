@@ -2,6 +2,7 @@
   "catalog": [
     {
       "id": "1",
+      "series": "BOILING MACHINE SILVERs",
       "title": "Компьютер 1",
       "CP": "AMD Ryzen 7500F",
       "VP": "NVIDIA RTX 4070",
@@ -17,6 +18,7 @@
     },
     {
       "id": "2",
+      "series": "BOILING MACHINE SILVERs",
       "title": "Компьютер 2",
       "CP": "AMD Ryzen 5 5600X",
       "VP": "AMD Radeon RX 6600",
@@ -32,6 +34,7 @@
     },
     {
       "id": "3",
+      "series": "BOILING MACHINE SILVERs",
       "title": "Компьютер 3",
       "CP": "Intel Core i7-12700K",
       "VP": "NVIDIA RTX 2060",
@@ -44,37 +47,126 @@
       "description": "Бюджетный игровой компьютер для комфортной игры в современных играх.",
       "typePc": "Gaming",
       "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp"
+    },
+    {
+      "id": "4",
+      "series": "BOILING MACHINE SILVERs",
+      "title": "Компьютер 4",
+      "CP": "Intel Core i5-12600K",
+      "VP": "NVIDIA RTX 3060",
+      "RAM": "DDR5 5600MHz 16GB",
+      "MatherBoard": "B660M AORUS ELITE",
+      "SDD": "1TB NVMe",
+      "powerBlock": "650w",
+      "Cooling": "Cooler Master Hyper 212",
+      "price": 16000,
+      "description": "Отличный выбор для игр и работы с графикой.",
+      "typePc": "Gaming",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp"
+    },
+    {
+      "id": "5",
+      "series": "MOSTER MACHINE",
+      "title": "Компьютер 5",
+      "CP": "Intel Core i7-12700K",
+      "VP": "NVIDIA RTX 3080",
+      "RAM": "DDR4 3600MHz 32GB",
+      "MatherBoard": "Z690 AORUS ELITE AX",
+      "SDD": "2TB NVMe",
+      "powerBlock": "850w",
+      "Cooling": "Noctua NH-D15",
+      "price": 500000,
+      "description": "Мощный компьютер для работы и игр на максимальных настройках.",
+      "typePc": "Workstation",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/product-card-1-1.webp"
+    },
+    {
+      "id": "6",
+      "series": "MOSTER MACHINE",
+      "title": "Компьютер 6",
+      "CP": "AMD Ryzen 9 5900X",
+      "VP": "NVIDIA RTX 3090",
+      "RAM": "DDR5 6400MHz 32GB",
+      "MatherBoard": "X570 AORUS MASTER",
+      "SDD": "2TB NVMe",
+      "powerBlock": "1000w",
+      "Cooling": "Corsair H100i",
+      "price": 600000,
+      "description": "Профессиональная станция для работы с тяжелыми задачами и играми.",
+      "typePc": "Workstation",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/product-card-1-1.webp"
+    },
+    {
+      "id": "7",
+      "series": "BOILING MACHINE SILVERs",
+      "title": "Компьютер 7",
+      "CP": "AMD Ryzen 7 5800X",
+      "VP": "NVIDIA RTX 3070",
+      "RAM": "DDR4 3200MHz 32GB",
+      "MatherBoard": "B550 AORUS PRO",
+      "SDD": "1TB NVMe",
+      "powerBlock": "750w",
+      "Cooling": "Deepcool Gammaxx 400",
+      "price": 18500,
+      "description": "Идеальный для игр и повседневных задач.",
+      "typePc": "Gaming",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp"
+    },
+    {
+      "id": "8",
+      "series": "MOSTER MACHINE",
+      "title": "Компьютер 8",
+      "CP": "Intel Core i9-11900K",
+      "VP": "NVIDIA RTX 3080 Ti",
+      "RAM": "DDR4 3200MHz 64GB",
+      "MatherBoard": "Z590 AORUS MASTER",
+      "SDD": "2TB NVMe",
+      "powerBlock": "850w",
+      "Cooling": "NZXT Kraken Z73",
+      "price": 800000,
+      "description": "Для профессиональных геймеров и дизайнеров.",
+      "typePc": "Workstation",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/product-card-1-1.webp"
+    },
+    {
+      "id": "9",
+      "series": "BOILING MACHINE SILVERs",
+      "title": "Компьютер 9",
+      "CP": "Intel Core i5-11400F",
+      "VP": "NVIDIA GTX 1650",
+      "RAM": "DDR4 2666MHz 16GB",
+      "MatherBoard": "B560M AORUS ELITE",
+      "SDD": "512GB NVMe",
+      "powerBlock": "600w",
+      "Cooling": "be quiet! Pure Rock 2",
+      "price": 11000,
+      "description": "Хороший выбор для начинающих геймеров.",
+      "typePc": "Gaming",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/silver-product-card-new.webp"
+    },
+    {
+      "id": "10",
+      "series": "MOSTER MACHINE",
+      "title": "Компьютер 10",
+      "CP": "AMD Ryzen 7 5700G",
+      "VP": "AMD Radeon Graphics",
+      "RAM": "DDR4 3200MHz 32GB",
+      "MatherBoard": "B550M PRO",
+      "SDD": "1TB NVMe",
+      "powerBlock": "650w",
+      "Cooling": "Cooler Master MasterLiquid ML240L",
+      "price": 300000,
+      "description": "Компьютер с интегрированной графикой для работы и развлечений.",
+      "typePc": "Workstation",
+      "imageUrl": "https://boiling-machine.ru/wp-content/uploads/product-card-1-1.webp"
     }
   ],
   "cart": [],
-  "order": [
-    {
-      "id": "fd72",
-      "body": "{\"firstName\":\"валентина\",\"lastName\":\"барышникова\",\"phone\":\"+79177382663\",\"email\":\"nata.vajtovich@bk.ru\",\"address\":\"420726\"}"
-    }
-  ],
+  "order": [],
   "users": [
     {
-      "id": "c046",
-      "name": "Вася",
-      "email": "vasya1@test.ru",
-      "password": "123"
-    },
-    {
-      "id": "7287",
-      "name": "Вася",
-      "email": "vasya1@test.ru",
-      "password": "123"
-    },
-    {
-      "id": "7837",
-      "name": "Дмитрий",
-      "email": "dima2v@bk.ru",
-      "password": "123"
-    },
-    {
-      "id": "c89e",
-      "firstName": "дИМАС",
+      "id": "5170",
+      "firstName": "Валерия",
       "lastName": "Попова",
       "email": "lera@test.ru",
       "password": "123"

@@ -15,7 +15,6 @@ export default function ProductId() {
     if (!product) {
         return <p>Загрузка...</p>;
     }
-
     return (
         <div className={styles.productContainer}>
             <div className={styles.productCard}>

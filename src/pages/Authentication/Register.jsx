@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Grid } from '@mui/material';
 import { useAuth } from '../../AuthContext'; // Импортируйте useAuth
-import cl from './Auth.module.css'; 
+import cl from './Auth.module.css';
 
 export default function Register() {
     const { login } = useAuth(); // Получите функцию login из контекста

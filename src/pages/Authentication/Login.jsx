@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Grid } from '@mui/material';
 import { useAuth } from '../../AuthContext'; // Импортируйте useAuth
-import cl from './Auth.module.css'; 
+import cl from './Auth.module.css';
 
 export default function Login() {
     const { login } = useAuth(); // Получите функцию login из контекста
@@ -11,6 +11,7 @@ export default function Login() {
         password: '',
     });
 
+    // Исправлено: удалено лишнее дублирование setFormData
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -20,7 +21,7 @@ export default function Login() {
 
         // Логика авторизации
         fetch(`http://localhost:3001/users?email=${formData.email}&password=${formData.password}`)
-            .then(response => response.json())
+            .then(response => response.json())  // Исправлено: завершен вызов fetch
             .then(data => {
                 if (data.length > 0) {
                     console.log('Авторизация успешна:', data[0]);

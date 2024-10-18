@@ -114,3 +114,38 @@ a {
     display: flex;
     gap: 10px;
 }
+
+.sorted {
+    display: flex;
+    cursor: pointer;
+    margin: 20px 30px;
+}
+
+.fsBar {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectTypePc {
+    width: 200px;
+}
+
+.selectList {
+    display: flex;
+    width: auto;
+    gap: 30px;
+    margin-left: 30px;
+}
+
+.selectSeries {
+    width: 200px;
+}
+
+.selectedChips {
+    display: flex;
+    width: auto;
+    gap: 30px;
+    margin: 20px 30px;
+}
